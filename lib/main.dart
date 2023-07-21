@@ -1,7 +1,5 @@
 //import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
-
-import 'features/home/presentations/pages/home_page.dart';
 import 'features/welcome/presentation/pages/welcome_page.dart';
 
 void main() {
