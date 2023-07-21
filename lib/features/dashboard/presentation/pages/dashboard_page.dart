@@ -27,9 +27,18 @@ class _dashboardpageState extends State<dashboardpage> {
             ),
           ),
           Container(
-              child: CupertinoSlidingSegmentedControl(
-                  children: {0: Text("Weekly"), 1: Text("Weekly")},
-                  onValueChanged: (value) {}))
+              height: 60,
+              width: 250,
+              child: CupertinoSlidingSegmentedControl(children: {
+                0: Text(
+                  "Weekly",
+                  style: TextStyle(fontSize: 20),
+                ),
+                1: Text(
+                  "Montly",
+                  style: TextStyle(fontSize: 20),
+                )
+              }, onValueChanged: (value) {}))
         ],
       ),
     );
