@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.onPressed});
-  void Function()? onPressed;
+class CustomButton2 extends StatefulWidget {
+  const CustomButton2({super.key});
 
+  @override
+  State<CustomButton2> createState() => _CustomButton2State();
+}
+
+class _CustomButton2State extends State<CustomButton2> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 60,
-      width: 350,
+      width: 150,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: () {},
         child: Text(
-          " Get Started ",
+          " Weekly ",
           style: TextStyle(fontSize: 20),
         ),
         style: ElevatedButton.styleFrom(

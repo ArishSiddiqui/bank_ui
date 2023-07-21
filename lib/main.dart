@@ -1,6 +1,8 @@
+//import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 import 'features/home/presentations/pages/home_page.dart';
+import 'features/welcome/presentation/pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +21,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomePage());
+        home: WelcomePage());
   }
 }
