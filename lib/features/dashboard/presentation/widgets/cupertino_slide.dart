@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class CupertinoSlide extends StatelessWidget {
   const CupertinoSlide({super.key});
@@ -22,12 +21,13 @@ class CupertinoSlide extends StatelessWidget {
 
 Widget bildsigment(String text) => Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(80)),
-      padding: EdgeInsets.fromLTRB(20, 10, 60, 20),
+      // padding: EdgeInsets.fromLTRB(20, 12, 60, 18),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
       child: Padding(
-        padding: const EdgeInsets.only(left: 20),
+        padding: const EdgeInsets.only(left: 18),
         child: Text(
           text,
-          style: TextStyle(fontSize: 22),
+          style: const TextStyle(fontSize: 20),
         ),
       ),
     );
