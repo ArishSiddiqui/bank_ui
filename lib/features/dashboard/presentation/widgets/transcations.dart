@@ -18,31 +18,58 @@ List<Transaction> transactions = [
 ];
 
 class TransactionList extends StatelessWidget {
+  const TransactionList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       // Add custom container properties like height, width, padding, etc.
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: ListView.builder(
         itemCount: transactions.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            // Add custom container properties for each transaction ListTile (if needed)
-            margin: EdgeInsets.symmetric(vertical: 8.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              color: Colors.grey[200],
-            ),
-            child: ListTile(
-                // Replace this with your desired icon
-                title: Text(transactions[index].name),
-                subtitle: Text(transactions[index].subtitle),
+              // Add custom container properties for each transaction ListTile (if needed)
+              margin: EdgeInsets.symmetric(vertical: 8.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.grey[100],
+              ),
+              child: ListTile(
+                title: Text(
+                  transactions[index].name,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                subtitle: Text(
+                  transactions[index].subtitle,
+                  style: TextStyle(color: Colors.grey.shade500),
+                ),
                 trailing: Container(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [Text('120.00'), Icon(Icons.forward)]),
-                )),
-          );
+                  width: 100, // Set the desired width for the container
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'USD.120.00',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 12),
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      Container(
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.blue),
+                        child: const Icon(
+                          Icons.forward,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ));
         },
       ),
     );
