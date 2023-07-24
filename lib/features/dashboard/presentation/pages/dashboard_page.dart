@@ -1,4 +1,4 @@
-// import 'package:banking_app_ui/features/dashboard/presentation/widgets/profile_container.dart';
+import 'package:banking_app_ui/core/constant/constant_variables.dart';
 import 'package:banking_app_ui/features/dashboard/presentation/widgets/widgets.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -9,62 +9,48 @@ class Dashboardpage extends StatefulWidget {
   const Dashboardpage({super.key});
 
   @override
-  State<Dashboardpage> createState() => _dashboardpageState();
+  State<dashboardpage> createState() => _dashboardpageState();
 }
 
-class _dashboardpageState extends State<Dashboardpage> {
+class _dashboardpageState extends State<dashboardpage> {
   @override
   Widget build(BuildContext context) {
+    // This line should be removed
+    screenHeight = MediaQuery.of(context).size.height;
+    screenWidth = MediaQuery.of(context).size.width;
+    //
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(left: 8),
+      body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(right: 220),
               child: Text(
                 "Analytics",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(right: 15, left: 10),
-              child: Cupertinoslide(),
+              child: cupertinoslide(),
             ),
             SizedBox(
               height: 15,
             ),
             MonthData(),
             Padding(
-              padding: EdgeInsets.only(right: 100),
+              padding: const EdgeInsets.only(right: 100),
               child: Text(
                 "Recent Transaction",
                 style: TextStyle(fontSize: 28),
               ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey.shade300),
-              child: Column(
-                children: [
-                  const Text(
-                    'Akhil Gadwal',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Flutter Dev',
-                    style: TextStyle(color: Colors.grey.shade300),
-                  ),
-                ],
-              ),
-            ),
+            )
           ],
         ),
       ),
