@@ -1,4 +1,5 @@
 import 'package:banking_app_ui/core/constant/constant_variables.dart';
+import 'package:banking_app_ui/features/dashboard/presentation/widgets/transcations.dart';
 import 'package:banking_app_ui/features/dashboard/presentation/widgets/widgets.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +10,48 @@ class Dashboardpage extends StatefulWidget {
   const Dashboardpage({super.key});
 
   @override
-  State<dashboardpage> createState() => _dashboardpageState();
+  State<Dashboardpage> createState() => _DashboardpageState();
 }
 
-class _dashboardpageState extends State<dashboardpage> {
+class _DashboardpageState extends State<Dashboardpage> {
+  final List<Map<String, dynamic>> data = [
+    {
+      'date': 17,
+      'day': "Mon",
+      'per': 45,
+    },
+    {
+      'date': 18,
+      'day': "Tue",
+      'per': 50,
+    },
+    {
+      'date': 19,
+      'day': "Wed",
+      'per': 25,
+    },
+    {
+      'date': 20,
+      'day': "Thu",
+      'per': 20,
+    },
+    {
+      'date': 21,
+      'day': "Fri",
+      'per': 40,
+    },
+    {
+      'date': 22,
+      'day': "Sat",
+      'per': 55,
+    },
+    {
+      'date': 23,
+      'day': "Sun",
+      'per': 56,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     // This line should be removed
@@ -95,7 +134,6 @@ class _dashboardpageState extends State<dashboardpage> {
                     "Expense and Income Total",
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
-
                   const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -109,33 +147,32 @@ class _dashboardpageState extends State<dashboardpage> {
                         )
                         .toList(),
                   )
-                  // ListView.builder(
-                  //   itemBuilder: (context, index) => MonthData(
-                  //     date: '12',
-                  //     day: 'MON',
-                  //     per: 25,
-                  //   ),
-                  // ),
                 ],
               ),
             ),
-
-            // MonthData(),
-            // const Padding(
-            //   padding: EdgeInsets.only(right: 15, left: 10),
-            //   child: CupertinoSlide(),
-            // ),
-            // const SizedBox(
-            //   height: 15,
-            // ),
-            // MonthData(),
-            // const Padding(
-            //   padding:  EdgeInsets.only(right: 100),
-            //   child: Text(
-            //     "Recent Transaction",
-            //     style: TextStyle(fontSize: 28),
-            //   ),
-            // )
+            const SizedBox(
+              height: 10,
+            ),
+            const Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Recent Transcations',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ],
+            ),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade300,
+                      borderRadius: BorderRadius.circular(12)),
+                  child: TransactionList()),
+            ))
           ],
         ),
       ),
