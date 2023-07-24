@@ -81,11 +81,31 @@ class _DashboardpageState extends State<Dashboardpage> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Container(
-                  //   child: Ro,
-                  // ),
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          size: 15,
+                        ),
+                        Text(
+                          'April 2023',
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          size: 15,
+                        ),
+                      ],
+                    ),
+                  ),
                   const Text(
                     "USD 24,000.00",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
