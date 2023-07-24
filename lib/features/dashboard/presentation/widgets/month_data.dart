@@ -13,7 +13,7 @@ class MonthData extends StatelessWidget {
     super.key,
   });
 
-  final double barHeight = screenHeight * 0.2;
+  final double barHeight = screenHeight * 0.18;
 
   @override
   Widget build(BuildContext context) {

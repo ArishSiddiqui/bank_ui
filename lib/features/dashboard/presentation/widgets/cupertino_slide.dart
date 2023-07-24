@@ -6,6 +6,8 @@ class CupertinoSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.symmetric(horizontal: 15.0),
       // decoration: BoxDecoration(borderRadius: BorderRadius.circular(80)),
       child: CupertinoSlidingSegmentedControl(children: {
         0: bildsigment(
@@ -20,14 +22,16 @@ class CupertinoSlide extends StatelessWidget {
 }
 
 Widget bildsigment(String text) => Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(80)),
-      // padding: EdgeInsets.fromLTRB(20, 12, 60, 18),
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 18),
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 20),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(80),
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
