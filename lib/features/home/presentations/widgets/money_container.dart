@@ -6,35 +6,43 @@ class PriceContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70,
-      child: Column(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12), color: Colors.white),
+      width: 100,
+      child: Padding(
+        padding: const EdgeInsets.all(2.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'USD',
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  'USD',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: const Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                  ),
+                )
+              ],
             ),
-            Container(
-              color: Colors.blue,
-              child: Icon(
-                Icons.arrow_forward,
-                color: Colors.white,
+            const Text(
+              '120.00',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
             )
           ],
         ),
-        Text(
-          '120.00',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        )
-      ]),
+      ),
     );
   }
 }
