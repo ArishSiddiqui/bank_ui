@@ -11,12 +11,12 @@ class _CustomButton2State extends State<CustomButton2> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
-      width: 150,
+      // height: 60,
+      // width: 100,
       child: ElevatedButton(
         onPressed: () {},
         child: Text(
-          " Weekly ",
+          " Weekly",
           style: TextStyle(fontSize: 20),
         ),
         style: ElevatedButton.styleFrom(

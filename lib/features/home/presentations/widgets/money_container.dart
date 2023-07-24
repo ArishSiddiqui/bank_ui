@@ -25,11 +25,15 @@ class PriceContainer extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  color: Colors.blue,
+                  padding: const EdgeInsets.all(2),
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.blue,
+                  ),
                   child: const Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
-                    size: 15,
+                    size: 10,
                   ),
                 ),
               ],

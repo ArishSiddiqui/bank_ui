@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  constraints: BoxConstraints(minHeight: 100),
+                  constraints: const BoxConstraints(minHeight: 100),
                   padding: const EdgeInsets.all(12),
                   height: 100,
                   width: double.infinity,

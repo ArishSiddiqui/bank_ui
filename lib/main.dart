@@ -1,7 +1,12 @@
 //import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
-import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
-import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
+// import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
+// import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
+
+import 'features/welcome/presentation/pages/welcome_page.dart';
+
+// import 'features/dashboard/presentation/pages/dashboard_page.dart';
+// import 'features/welcome/presentation/pages/welcome_page.dart';
 
 //import 'features/welcome/presentation/pages/welcome_page.dart';
 
@@ -22,6 +27,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: dashboardpage());
+        home: WelcomePage());
   }
 }

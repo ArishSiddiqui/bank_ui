@@ -48,7 +48,7 @@ class ProfileBar extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const dashboardpage()));
+                            builder: (context) => const Dashboardpage()));
                   },
                   child: Container(
                     decoration: BoxDecoration(

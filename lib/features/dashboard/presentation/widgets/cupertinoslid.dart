@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class cupertinoslide extends StatelessWidget {
-  const cupertinoslide({super.key});
+class Cupertinoslide extends StatelessWidget {
+  const Cupertinoslide({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,12 @@ class cupertinoslide extends StatelessWidget {
 
 Widget bildsigment(String text) => Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(80)),
-      padding: EdgeInsets.fromLTRB(20, 10, 60, 20),
+      padding: const EdgeInsets.fromLTRB(20, 10, 60, 20),
       child: Padding(
         padding: const EdgeInsets.only(left: 20),
         child: Text(
           text,
-          style: TextStyle(fontSize: 22),
+          style: const TextStyle(fontSize: 15),
         ),
       ),
     );
