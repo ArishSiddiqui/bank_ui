@@ -29,8 +29,9 @@ class PriceContainer extends StatelessWidget {
                   child: const Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
+                    size: 15,
                   ),
-                )
+                ),
               ],
             ),
             const Text(

@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:banking_app_ui/features/dashboard/presentation/widgets/widgets.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
 //import '../widgets/custom_button2.dart';
@@ -13,33 +14,41 @@ class dashboardpage extends StatefulWidget {
 class _dashboardpageState extends State<dashboardpage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 250),
-            child: Text(
-              "Analytics",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    return  Scaffold(
+      body: Padding(
+        padding:  EdgeInsets.only(left: 8),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 25,
             ),
-          ),
-          Container(
-              height: 60,
-              width: 250,
-              child: CupertinoSlidingSegmentedControl(children: {
-                0: Text(
-                  "Weekly",
-                  style: TextStyle(fontSize: 20),
-                ),
-                1: Text(
-                  "Montly",
-                  style: TextStyle(fontSize: 20),
-                )
-              }, onValueChanged: (value) {}))
-        ],
+            Padding(
+              padding:  EdgeInsets.only(right: 220),
+              child: Text(
+                "Analytics",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 15, left: 10),
+              child: cupertinoslide(),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            MonthData(),
+            Padding(
+              padding: const EdgeInsets.only(right: 100),
+              child: Text(
+                "Recent Transaction",
+                style: TextStyle(fontSize: 28),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

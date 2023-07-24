@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.onPressed});
-  void Function()? onPressed;
+  const CustomButton({super.key, required this.onPressed});
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class CustomButton extends StatelessWidget {
       height: 60,
       width: 350,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: (){},
         child: Text(
           " Get Started ",
           style: TextStyle(fontSize: 20),
