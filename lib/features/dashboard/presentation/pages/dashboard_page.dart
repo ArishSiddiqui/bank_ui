@@ -14,16 +14,16 @@ class dashboardpage extends StatefulWidget {
 class _dashboardpageState extends State<dashboardpage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Padding(
-        padding:  EdgeInsets.only(left: 8),
+        padding: const EdgeInsets.only(left: 8),
         child: Column(
           children: [
             SizedBox(
               height: 25,
             ),
             Padding(
-              padding:  EdgeInsets.only(right: 220),
+              padding: EdgeInsets.only(right: 220),
               child: Text(
                 "Analytics",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),

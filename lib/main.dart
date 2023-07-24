@@ -1,7 +1,8 @@
 //import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
+import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:banking_app_ui/features/welcome/presentation/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
-// import 'features/welcome/presentation/pages/welcome_page.dart';
-import 'features/dashboard/presentation/pages/dashboard_page.dart';
+
 //import 'features/welcome/presentation/pages/welcome_page.dart';
 
 void main() {

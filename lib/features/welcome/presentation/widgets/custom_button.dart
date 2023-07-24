@@ -10,7 +10,7 @@ class CustomButton extends StatelessWidget {
       height: 60,
       width: 350,
       child: ElevatedButton(
-        onPressed: (){},
+        onPressed: onPressed,
         child: Text(
           " Get Started ",
           style: TextStyle(fontSize: 20),

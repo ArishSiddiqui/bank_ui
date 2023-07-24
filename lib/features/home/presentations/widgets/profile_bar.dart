@@ -1,3 +1,4 @@
+import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileBar extends StatelessWidget {
@@ -42,14 +43,22 @@ class ProfileBar extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(),
-                      shape: BoxShape.circle,
-                      color: Colors.white),
-                  child: const Padding(
-                    padding: EdgeInsets.all(6.0),
-                    child: Icon(Icons.notifications_none),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const dashboardpage()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(),
+                        shape: BoxShape.circle,
+                        color: Colors.white),
+                    child: const Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Icon(Icons.notifications_none),
+                    ),
                   ),
                 ),
               ],

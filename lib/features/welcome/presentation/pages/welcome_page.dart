@@ -56,10 +56,13 @@ class _WelcomePageState extends State<WelcomePage> {
             const SizedBox(
               height: 20,
             ),
-            CustomButton(onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
-            }),
+            CustomButton(
+                onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    )),
             Row(
               children: [
                 const Padding(
