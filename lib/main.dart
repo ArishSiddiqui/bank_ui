@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'features/dashboard/presentation/pages/dashboard_page.dart';
+import 'features/welcome/presentation/pages/welcome_page.dart';
 
 //import 'features/welcome/presentation/pages/welcome_page.dart';
 
@@ -22,6 +23,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: dashboardpage());
+        home: WelcomePage());
   }
 }
