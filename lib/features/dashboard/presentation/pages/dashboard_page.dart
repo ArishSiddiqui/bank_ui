@@ -61,19 +61,31 @@ class _DashboardpageState extends State<Dashboardpage> {
       body: SafeArea(
         child: Column(
           children: [
-            const Text(
-              "Analytics",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Analytics",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
             const SizedBox(
-              height: 15,
+              height: 20,
             ),
             const CupertinoSlide(),
+            const SizedBox(
+              height: 20,
+            ),
             Container(
               margin: const EdgeInsets.symmetric(
                 horizontal: 15.0,
               ),
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(15.0),
               width: double.infinity,
               height: screenHeight * 0.45,
               decoration: BoxDecoration(
@@ -85,19 +97,25 @@ class _DashboardpageState extends State<Dashboardpage> {
                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(12.0),
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Row(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           Icons.arrow_back_ios_new_rounded,
                           size: 15,
                         ),
+                        SizedBox(
+                          width: 15,
+                        ),
                         Text(
                           'April 2023',
+                        ),
+                        SizedBox(
+                          width: 15,
                         ),
                         Icon(
                           Icons.arrow_forward_ios_rounded,
@@ -106,6 +124,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                       ],
                     ),
                   ),
+                  const Spacer(),
                   const Text(
                     "USD 24,000.00",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -114,6 +133,8 @@ class _DashboardpageState extends State<Dashboardpage> {
                     "Expense and Income Total",
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
+
+                  const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: data
