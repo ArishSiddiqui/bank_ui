@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class cupertinoslide extends StatelessWidget {
-  const cupertinoslide({super.key});
+class CupertinoSlide extends StatelessWidget {
+  const CupertinoSlide({super.key});
 
   @override
   Widget build(BuildContext context) {

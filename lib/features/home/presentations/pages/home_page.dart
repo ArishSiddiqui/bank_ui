@@ -1,3 +1,4 @@
+import 'package:banking_app_ui/core/constant/constant_variables.dart';
 import 'package:banking_app_ui/features/home/presentations/widgets/credit_card.dart';
 import 'package:banking_app_ui/features/home/presentations/widgets/profile_bar.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    screenHeight = MediaQuery.of(context).size.height;
+    screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
