@@ -45,10 +45,7 @@ class ProfileBar extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Dashboardpage()));
+                    Navigator.pushNamed(context, '/dashboard');
                   },
                   child: Container(
                     decoration: BoxDecoration(

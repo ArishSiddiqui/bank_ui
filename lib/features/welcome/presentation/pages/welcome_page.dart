@@ -48,12 +48,7 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 15,
             ),
             CustomButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HomePage(),
-                ),
-              ),
+              onPressed: () => Navigator.pushNamed(context, '/bottomnav')
             ),
             const SizedBox(
               height: 10,
