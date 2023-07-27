@@ -1,5 +1,6 @@
+import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:flutter/material.dart';
-import '../../../home/presentations/pages/home_page.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/widegts.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -48,7 +49,13 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 15,
             ),
             CustomButton(
-              onPressed: () => Navigator.pushNamed(context, '/bottomnav')
+              // It will push new page and remove the previous one page
+              // onPressed: () => context.pushReplacement(PagePath.home),
+              // // It will navigate us to new page and hold the previos state.
+              onPressed: () => context.push(PagePath.home),
+              // It will navigate to a page and clear all previous pages. 
+              // onPressed: () => context.go(PagePath.home),
+              // onPressed: () => GoRouter.of(context).go('/home'),
             ),
             const SizedBox(
               height: 10,
