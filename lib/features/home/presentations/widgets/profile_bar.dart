@@ -1,5 +1,8 @@
 // import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/routes/route_constants.dart';
 
 class ProfileBar extends StatelessWidget {
   const ProfileBar({super.key});
@@ -16,9 +19,12 @@ class ProfileBar extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80'),
+                InkWell(
+                  onTap: () => context.push(PagePath.profilepage),
+                  child: const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80'),
+                  ),
                 ),
                 const SizedBox(
                   width: 5,
