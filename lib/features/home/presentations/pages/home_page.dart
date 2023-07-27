@@ -13,8 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
- 
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -161,7 +159,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
- 
   }
-
 }

@@ -25,7 +25,7 @@ class _BottomNavState extends State<BottomNav> {
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: (index) => setState(() => _selectedIndex = index),
+        onTap: (index) => setState(() => _selectedIndex= index),
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
