@@ -1,7 +1,7 @@
 import 'package:banking_app_ui/features/bottom_navigation/presentations/pages/bottom_navigation.dart';
 import 'package:flutter/material.dart';
-import 'features/dashboard/presentation/pages/dashboard_page.dart';
-import 'features/home/presentations/pages/home_page.dart';
+// import 'features/dashboard/presentation/pages/dashboard_page.dart';
+// import 'features/home/presentations/pages/home_page.dart';
 import 'features/welcome/presentation/pages/welcome_page.dart';
 
 void main() {
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => WelcomePage(),
-        '/bottomnav' :(context) => BottomNav(),
-       // '/home': (context) => const HomePage(),
+        '/bottomnav': (context) => const BottomNav(),
+        // '/home': (context) => const HomePage(),
         //'/dashboard': (context) => const Dashboardpage(),
       },
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../home/presentations/pages/home_page.dart';
+// import '../../../home/presentations/pages/home_page.dart';
 import '../widgets/widegts.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -48,8 +48,7 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 15,
             ),
             CustomButton(
-              onPressed: () => Navigator.pushNamed(context, '/bottomnav')
-            ),
+                onPressed: () => Navigator.pushNamed(context, '/bottomnav')),
             const SizedBox(
               height: 10,
             ),

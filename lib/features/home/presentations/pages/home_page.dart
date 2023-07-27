@@ -1,5 +1,5 @@
 import 'package:banking_app_ui/core/constant/constant_variables.dart';
-import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
+// import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:banking_app_ui/features/home/presentations/widgets/credit_card.dart';
 import 'package:banking_app_ui/features/home/presentations/widgets/profile_bar.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
- 
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
@@ -161,7 +159,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
- 
   }
-
 }
