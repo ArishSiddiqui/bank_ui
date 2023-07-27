@@ -1,4 +1,4 @@
-import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
+// import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -51,7 +51,7 @@ class ProfileBar extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/dashboard');
+                    // Navigator.pushNamed(context, '/dashboard');
                   },
                   child: Container(
                     decoration: BoxDecoration(

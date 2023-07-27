@@ -1,3 +1,4 @@
+import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:flutter/material.dart';
 
 // Sample transaction data class (replace this with your actual data model)
@@ -36,9 +37,12 @@ class TransactionList extends StatelessWidget {
                 color: Colors.grey[100],
               ),
               child: ListTile(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const CartPage())),
                 title: Text(
                   transactions[index].name,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 15),
                 ),
                 subtitle: Text(
                   transactions[index].subtitle,
