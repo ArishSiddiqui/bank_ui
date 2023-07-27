@@ -1,5 +1,6 @@
 import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
+import 'package:banking_app_ui/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/bottom_navigation/presentations/pages/bottom_navigation.dart';
@@ -22,6 +23,15 @@ final GoRouter router = GoRouter(
       // },
       pageBuilder: (context, state) => MaterialPage(
         child: WelcomePage(),
+      ),
+    ),
+    GoRoute(
+      path: PagePath.profilepage,
+      // builder: (BuildContext context, GoRouterState state) {
+      //   return WelcomePage();
+      // },
+      pageBuilder: (context, state) => MaterialPage(
+        child: ProfilePage(),
       ),
     ),
     StatefulShellRoute.indexedStack(
