@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../dashboard/presentation/pages/dashboard_page.dart';
-import '../../../home/presentations/pages/home_page.dart';
+class BottomNav extends StatelessWidget {
+  final StatefulNavigationShell navigationShell;
+  const BottomNav({
+    required this.navigationShell,
+    super.key,
+  });
 
-class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
+  void _goBranch(int index) {
+    navigationShell.goBranch(
+      index,
+      // A common pattern when using bottom navigation bars is to support
+      // navigating to the initial location when tapping the item that is
+      // already active. This example demonstrates how to support this behavior,
+      // using the initialLocation parameter of goBranch.
+      initialLocation: index == navigationShell.currentIndex,
+    );
+  }
 
-  @override
-  State<BottomNav> createState() => _BottomNavState();
-}
-
-class _BottomNavState extends State<BottomNav> {
-  var _selectedIndex = 0;
-
-  // Add the following function to handle navigation item taps
-
-  final screens = [
-    const HomePage(),
-    const Dashboardpage(),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[_selectedIndex],
+      body: navigationShell,
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (index) => setState(() => _selectedIndex = index),
+        currentIndex: navigationShell.currentIndex,
+        onTap: _goBranch,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
