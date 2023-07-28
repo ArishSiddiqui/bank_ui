@@ -1,5 +1,7 @@
 import 'package:banking_app_ui/core/routes/route_constants.dart';
+import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
+import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:banking_app_ui/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -21,16 +23,8 @@ final GoRouter router = GoRouter(
       // builder: (BuildContext context, GoRouterState state) {
       //   return WelcomePage();
       // },
-      pageBuilder: (context, state) => MaterialPage(
+      pageBuilder: (context, state) => const MaterialPage(
         child: WelcomePage(),
-      ),
-    ),
-    GoRoute(
-      path: PagePath.profilepage,
-      pageBuilder: (context, state) => MaterialPage(
-        child: ProfilePage(
-          label: 'Profile Page',
-        ),
       ),
     ),
     StatefulShellRoute.indexedStack(
@@ -49,17 +43,25 @@ final GoRouter router = GoRouter(
               pageBuilder: (context, state) => const MaterialPage(
                 child: HomePage(),
               ),
-              // routes: [
-              //   // child route
-              //   GoRoute(
-              //     path: PagePath.profilepage,
-              //     pageBuilder: (context, state) => const MaterialPage(
-              //       child: ProfilePage(
-              //         label: 'Profile Page',
-              //       ),
-              //     ),
-              //   ),
-              // ],
+              routes: [
+                // child route
+                GoRoute(
+                  path: PagePath.profilepage,
+                  pageBuilder: (context, state) {
+                    Map<String, dynamic>? data =
+                        state.extra as Map<String, dynamic>?;
+                    String userName = data!['userName'] as String;
+                    ProfileDetails details =
+                        data['profileDetails'] as ProfileDetails;
+                    return MaterialPage(
+                      child: ProfilePage(
+                        label: userName,
+                        details: details,
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -73,23 +75,19 @@ final GoRouter router = GoRouter(
               pageBuilder: (context, state) => const MaterialPage(
                 child: Dashboardpage(),
               ),
-              // routes: [
-              //   // child route
-              //   GoRoute(
-              //     path: 'details',
-              //     builder: (context, state) => const DetailsScreen(label: 'B'),
-              //   ),
-              // ],
+              routes: [
+                // child route
+                GoRoute(
+                  path: PagePath.cartpage,
+                  pageBuilder: (context, state) => const MaterialPage(
+                    child: CartPage(),
+                  ),
+                )
+              ],
             ),
           ],
         ),
       ],
     ),
-    // GoRoute(
-    //   path: PagePath.home,
-    //   builder: (BuildContext context, GoRouterState state) {
-    //     return const HomePage();
-    //   },
-    // ),
   ],
 );

@@ -1,5 +1,7 @@
+import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 // Sample transaction data class (replace this with your actual data model)
 class Transaction {
@@ -37,8 +39,7 @@ class TransactionList extends StatelessWidget {
                 color: Colors.grey[100],
               ),
               child: ListTile(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const CartPage())),
+                onTap: () => context.go('${PagePath.dashboard}/${PagePath.cartpage}'),
                 title: Text(
                   transactions[index].name,
                   style: const TextStyle(

@@ -1,4 +1,5 @@
 // import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +21,16 @@ class ProfileBar extends StatelessWidget {
                   width: 10,
                 ),
                 InkWell(
-                  onTap: () => context.push(PagePath.profilepage),
+                  onTap: () => context.go(
+                    '${PagePath.home}/${PagePath.profilepage}',
+                    extra: <String, dynamic>{
+                      'userName': 'Ajharuddin_Shk',
+                      'profileDetails': ProfileDetails(
+                        name: 'Ajhar',
+                        designation: 'Flutter Dev',
+                      ),
+                    },
+                  ),
                   child: const CircleAvatar(
                     backgroundImage: NetworkImage(
                         'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&w=1000&q=80'),
