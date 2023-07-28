@@ -1,7 +1,10 @@
 // import 'package:banking_app_ui/core/routes/route_constants.dart';
+import 'package:banking_app_ui/core/routes/route_config.dart';
+import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
-// import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
+import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 // import 'package:go_router/go_router.dart';
 import '../widgets/widegts.dart';
 
@@ -50,11 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
             const SizedBox(
               height: 15,
             ),
-            CustomButton(
-                onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Dashboardpage()))),
+            CustomButton(onPressed: () => context.go(PagePath.home)),
             const SizedBox(
               height: 10,
             ),
@@ -74,71 +73,6 @@ class _WelcomePageState extends State<WelcomePage> {
             )
           ],
         ),
-        // child: Column(
-        //   children: [
-        //     Image.network(
-        //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQFGVOcDJXoRg3T1gHQ0yozFATwaV0WlT-tA&usqp=CAU",
-        //       height: 480,
-        //       width: mediaQuery.size.width,
-        //     ),
-        //     const Column(
-        //       children: [
-        //         Padding(
-        //           padding: EdgeInsets.only(left: 15),
-        //           child: Text(
-        //             "    Innovative Digital Financial Planner And ",
-        //             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-        //           ),
-        //         ),
-        //         Text(
-        //           "  Management ",
-        //           style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-        //         ),
-        //       ],
-        //     ),
-        //     const SizedBox(
-        //       height: 10,
-        //     ),
-        //     const Column(
-        //       children: [
-        //         Text(
-        //           "  Designed to help you manage youre  ",
-        //           style: TextStyle(fontSize: 18, color: Colors.grey),
-        //         ),
-        //         Text(
-        //           "  easily and efficianty",
-        //           style: TextStyle(fontSize: 18, color: Colors.grey),
-        //         ),
-        //       ],
-        //     ),
-        //     const SizedBox(
-        //       height: 20,
-        //     ),
-        //     CustomButton(
-        //         onPressed: () => Navigator.push(
-        //               context,
-        //               MaterialPageRoute(
-        //                 builder: (context) => const HomePage(),
-        //               ),
-        //             )),
-        //     Row(
-        //       children: [
-        //         const Padding(
-        //           padding: EdgeInsets.only(
-        //             left: 60,
-        //           ),
-        //           child: Text("    Already Have and Account?"),
-        //         ),
-        //         TextButton(
-        //             onPressed: () {},
-        //             child: const Text("Login",
-        //                 style: TextStyle(
-        //                     decoration: TextDecoration.underline,
-        //                     fontSize: 18))),
-        //       ],
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }

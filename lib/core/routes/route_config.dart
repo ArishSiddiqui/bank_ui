@@ -31,7 +31,9 @@ final GoRouter router = GoRouter(
       //   return WelcomePage();
       // },
       pageBuilder: (context, state) => MaterialPage(
-        child: ProfilePage(),
+        child: ProfilePage(
+          label: 'Profile Page',
+        ),
       ),
     ),
     StatefulShellRoute.indexedStack(
@@ -53,8 +55,12 @@ final GoRouter router = GoRouter(
               // routes: [
               //   // child route
               //   GoRoute(
-              //     path: 'details',
-              //     builder: (context, state) => const DetailsScreen(label: 'A'),
+              //     path: PagePath.profilepage,
+              //     pageBuilder: (context, state) => const MaterialPage(
+              //       child: ProfilePage(
+              //         label: 'Profile Page',
+              //       ),
+              //     ),
               //   ),
               // ],
             ),

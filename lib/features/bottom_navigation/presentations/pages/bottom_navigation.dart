@@ -23,27 +23,42 @@ class BottomNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: navigationShell.currentIndex,
-        onTap: _goBranch,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              //color: Colors.blue,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.dashboard,
-              // color: Colors.blue,
-            ),
-            label: 'DashBoard',
-          ),
+       bottomNavigationBar:NavigationBar(
+        selectedIndex: navigationShell.currentIndex,
+        destinations: const [
+          NavigationDestination(label: 'Home', icon: Icon(Icons.home)),
+          NavigationDestination(label: 'Dashboard', icon: Icon(Icons.dashboard)),
         ],
+        onDestinationSelected: _goBranch,
       ),
+
+
+
+
+
+
+
+      // BottomNavigationBar(
+      //   currentIndex: navigationShell.currentIndex,
+      //   onTap: _goBranch,
+      //   type: BottomNavigationBarType.fixed,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.home,
+      //         //color: Colors.blue,
+      //       ),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.dashboard,
+      //         // color: Colors.blue,
+      //       ),
+      //       label: 'DashBoard',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
