@@ -1,4 +1,5 @@
 import 'package:banking_app_ui/core/routes/route_constants.dart';
+import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
 import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:banking_app_ui/features/profile/presentation/pages/profile_page.dart';
@@ -47,9 +48,11 @@ final GoRouter router = GoRouter(
                 GoRoute(
                   path: PagePath.profilepage,
                   pageBuilder: (context, state) {
-                    Map<String, dynamic>? data = state.extra as Map<String, dynamic>?;
+                    Map<String, dynamic>? data =
+                        state.extra as Map<String, dynamic>?;
                     String userName = data!['userName'] as String;
-                    ProfileDetails details = data['profileDetails'] as ProfileDetails;
+                    ProfileDetails details =
+                        data['profileDetails'] as ProfileDetails;
                     return MaterialPage(
                       child: ProfilePage(
                         label: userName,
@@ -72,9 +75,15 @@ final GoRouter router = GoRouter(
               pageBuilder: (context, state) => const MaterialPage(
                 child: Dashboardpage(),
               ),
-              // routes: [
-              //   // child route
-              // ],
+              routes: [
+                // child route
+                GoRoute(
+                  path: PagePath.cartpage,
+                  pageBuilder: (context, state) => const MaterialPage(
+                    child: CartPage(),
+                  ),
+                )
+              ],
             ),
           ],
         ),
