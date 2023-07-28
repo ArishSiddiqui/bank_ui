@@ -1,9 +1,16 @@
 import 'package:banking_app_ui/core/routes/route_constants.dart';
+import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key, required String label});
+  final String label;
+  final ProfileDetails details;
+  const ProfilePage({
+    super.key,
+    required this.label,
+    required this.details,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +25,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            Container(
-              //color: Colors.red,
+            SizedBox(
               width: screenwidth,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -30,11 +36,11 @@ class ProfilePage extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const Text(
-                        'Jennifermusk',
-                        style: TextStyle(fontSize: 24),
+                      Text(
+                        label,
+                        style: const TextStyle(fontSize: 24),
                       ),
-                      Icon(Icons.verified),
+                      const Icon(Icons.verified),
                     ],
                   ),
                   const Icon(Icons.linear_scale)
@@ -44,27 +50,30 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Column(
+            Column(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage: NetworkImage(
                     'https://images.unsplash.com/photo-1606406054219-619c4c2e2100?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hpbmVzZSUyMGdpcmx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
                   ),
                   radius: 70,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 Text(
-                  'JenniferMusk',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  details.name,
+                  // 'JenniferMusk',
+                  style: const TextStyle(
+                      fontSize: 22, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
-                  'Singer & Dancer',
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
+                  // 'Singer & Dancer',
+                  details.designation,
+                  style: const TextStyle(fontSize: 20, color: Colors.grey),
                 ),
               ],
             ),
