@@ -1,7 +1,9 @@
+import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({super.key, required String label});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class ProfilePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Container(
@@ -23,21 +25,26 @@ class ProfilePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.arrow_back_ios_new),
+                    onPressed: () => context.pop(PagePath.home),
+                    icon: const Icon(Icons.arrow_back_ios_new),
                   ),
-                  const Text(
-                    'Jennifermusk',
-                    style: TextStyle(fontSize: 24),
+                  Row(
+                    children: [
+                      const Text(
+                        'Jennifermusk',
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      Icon(Icons.verified),
+                    ],
                   ),
-                  Icon(Icons.linear_scale)
+                  const Icon(Icons.linear_scale)
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Column(
+            const Column(
               children: [
                 CircleAvatar(
                   backgroundImage: NetworkImage(
@@ -48,25 +55,25 @@ class ProfilePage extends StatelessWidget {
                 SizedBox(
                   height: 25,
                 ),
-                const Text(
+                Text(
                   'JenniferMusk',
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 15,
                 ),
-                const Text(
+                Text(
                   'Singer & Dancer',
                   style: TextStyle(fontSize: 20, color: Colors.grey),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
               width: 350,
-              child: Row(
+              child: const Row(
                 children: [
                   Column(
                     children: [
