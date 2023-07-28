@@ -21,7 +21,7 @@ class ProfileBar extends StatelessWidget {
                   width: 10,
                 ),
                 InkWell(
-                  onTap: () => context.go(
+                  onTap: () => context.push(
                     '${PagePath.home}/${PagePath.profilepage}',
                     extra: <String, dynamic>{
                       'userName': 'Ajharuddin_Shk',
@@ -30,6 +30,7 @@ class ProfileBar extends StatelessWidget {
                         designation: 'Flutter Dev',
                       ),
                     },
+                    
                   ),
                   child: const CircleAvatar(
                     backgroundImage: NetworkImage(
