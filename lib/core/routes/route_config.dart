@@ -27,9 +27,6 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: PagePath.profilepage,
-      // builder: (BuildContext context, GoRouterState state) {
-      //   return WelcomePage();
-      // },
       pageBuilder: (context, state) => MaterialPage(
         child: ProfilePage(
           label: 'Profile Page',
