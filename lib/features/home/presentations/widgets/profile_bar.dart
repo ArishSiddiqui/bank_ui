@@ -25,10 +25,9 @@ class ProfileBar extends StatelessWidget {
                     '${PagePath.home}/${PagePath.profilepage}',
                     extra: <String, dynamic>{
                       'userName': 'Ajharuddin_Shk',
-                      'profileDetails': ProfileDetails(
-                        name: 'Ajhar',
-                        designation: 'Flutter Dev',
-                      ),
+                       'name' : 'Ajhar',
+                        'designation' : 'Flutter Dev',
+                       
                     },
                   ),
                   child: const CircleAvatar(

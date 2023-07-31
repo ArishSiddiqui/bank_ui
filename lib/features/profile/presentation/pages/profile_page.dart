@@ -3,15 +3,24 @@ import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   final String label;
-  final ProfileDetails details;
+   final String newname;
+    final String newdesignation;
+  //final ProfileDetails details;
   const ProfilePage({
     super.key,
-    required this.label,
-    required this.details,
+     required this.label,
+     required this.newname,
+     required this.newdesignation,
+   // required this.details,
   });
 
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     final screenwidth = MediaQuery.of(context).size.width;
@@ -37,7 +46,7 @@ class ProfilePage extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        label,
+                        widget.label,
                         style: const TextStyle(fontSize: 24),
                       ),
                       const Icon(Icons.verified),
@@ -50,7 +59,7 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Column(
+             Column(
               children: [
                 const CircleAvatar(
                   backgroundImage: NetworkImage(
@@ -62,27 +71,27 @@ class ProfilePage extends StatelessWidget {
                   height: 25,
                 ),
                 Text(
-                  details.name,
-                  // 'JenniferMusk',
-                  style: const TextStyle(
+                  widget.newname,
+                   //'JenniferMusk',
+                  style:  const TextStyle(
                       fontSize: 22, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                Text(
-                  // 'Singer & Dancer',
-                  details.designation,
-                  style: const TextStyle(fontSize: 20, color: Colors.grey),
+              Text(
+                 //  'Singer & Dancer',
+                 widget.newdesignation,
+                  style:  const TextStyle(fontSize: 20, color: Colors.grey),
                 ),
               ],
             ),
             const SizedBox(
               height: 20,
             ),
-            Container(
+           const  SizedBox(
               width: 350,
-              child: const Row(
+              child:  Row(
                 children: [
                   Column(
                     children: [
@@ -148,3 +157,5 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
+
+
