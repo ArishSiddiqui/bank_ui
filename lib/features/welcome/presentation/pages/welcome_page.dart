@@ -1,6 +1,7 @@
-import 'package:banking_app_ui/core/routes/route_constants.dart';
+// import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../config/routes/route_constants.dart';
 import '../widgets/widegts.dart';
 
 class WelcomePage extends StatefulWidget {

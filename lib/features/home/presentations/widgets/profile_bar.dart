@@ -1,9 +1,10 @@
 // import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
-import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/routes/route_constants.dart';
+import '../../../../config/routes/route_constants.dart';
+
+// import '../../../../core/routes/route_constants.dart';
 
 class ProfileBar extends StatelessWidget {
   const ProfileBar({super.key});
@@ -25,9 +26,8 @@ class ProfileBar extends StatelessWidget {
                     '${PagePath.home}/${PagePath.profilepage}',
                     extra: <String, dynamic>{
                       'userName': 'Ajharuddin_Shk',
-                       'name' : 'Ajhar',
-                        'designation' : 'Flutter Dev',
-                       
+                      'name': 'Ajhar',
+                      'designation': 'Flutter Dev',
                     },
                   ),
                   child: const CircleAvatar(

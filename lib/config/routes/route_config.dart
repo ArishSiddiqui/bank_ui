@@ -1,4 +1,5 @@
-import 'package:banking_app_ui/core/routes/route_constants.dart';
+import 'package:banking_app_ui/config/routes/route_constants.dart';
+// import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
 // import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
@@ -28,7 +29,9 @@ final GoRouter router = GoRouter(
         child: WelcomePage(),
       ),
     ),
+    //card page
     GoRoute(
+      parentNavigatorKey: _rootNavigatorKey,
       path: PagePath.cardPage,
       pageBuilder: (context, state) => const MaterialPage(
         child: CardDetails(),
@@ -53,6 +56,7 @@ final GoRouter router = GoRouter(
               routes: [
                 // child route
                 GoRoute(
+                  parentNavigatorKey: _homeKey,
                   path: PagePath.profilepage,
                   pageBuilder: (context, state) {
                     Map<String, dynamic> data =

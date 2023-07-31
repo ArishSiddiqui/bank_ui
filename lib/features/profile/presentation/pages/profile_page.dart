@@ -1,7 +1,9 @@
-import 'package:banking_app_ui/core/routes/route_constants.dart';
+// import 'package:banking_app_ui/core/routes/route_constants.dart';
 // import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../config/routes/route_constants.dart';
 
 class ProfilePage extends StatefulWidget {
   final String label;
