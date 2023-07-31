@@ -49,14 +49,17 @@ final GoRouter router = GoRouter(
                   path: PagePath.profilepage,
                   pageBuilder: (context, state) {
                     Map<String, dynamic>? data =
-                        state.extra as Map<String, dynamic>?;
-                    String userName = data!['userName'] as String;
-                    ProfileDetails details =
-                        data['profileDetails'] as ProfileDetails;
+                        state.extra as Map<String, dynamic>;
+                    String userName = data['userName'];
+                    String name = data['name'];
+                   String designation = data['designation'];
+                   // ProfileDetails details = data['profileDetails'];
                     return MaterialPage(
                       child: ProfilePage(
                         label: userName,
-                        details: details,
+                        newname: name,
+                        newdesignation: designation,
+                        //details: details,
                       ),
                     );
                   },
