@@ -1,11 +1,12 @@
 import 'package:banking_app_ui/core/routes/route_constants.dart';
 import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:banking_app_ui/features/home/presentations/pages/home_page.dart';
-import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
+// import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:banking_app_ui/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/bottom_navigation/presentations/pages/bottom_navigation.dart';
+import '../../features/cards/pages/card_details.dart';
 import '../../features/dashboard/presentation/pages/dashboard_page.dart';
 import '../../features/welcome/presentation/pages/welcome_page.dart';
 
@@ -25,6 +26,12 @@ final GoRouter router = GoRouter(
       // },
       pageBuilder: (context, state) => const MaterialPage(
         child: WelcomePage(),
+      ),
+    ),
+    GoRoute(
+      path: PagePath.cardPage,
+      pageBuilder: (context, state) => const MaterialPage(
+        child: CardDetails(),
       ),
     ),
     StatefulShellRoute.indexedStack(
@@ -48,12 +55,12 @@ final GoRouter router = GoRouter(
                 GoRoute(
                   path: PagePath.profilepage,
                   pageBuilder: (context, state) {
-                    Map<String, dynamic>? data =
+                    Map<String, dynamic> data =
                         state.extra as Map<String, dynamic>;
                     String userName = data['userName'];
                     String name = data['name'];
-                   String designation = data['designation'];
-                   // ProfileDetails details = data['profileDetails'];
+                    String designation = data['designation'];
+                    // ProfileDetails details = data['profileDetails'];
                     return MaterialPage(
                       child: ProfilePage(
                         label: userName,

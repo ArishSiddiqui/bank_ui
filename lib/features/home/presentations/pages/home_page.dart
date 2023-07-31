@@ -1,8 +1,10 @@
 import 'package:banking_app_ui/core/constant/constant_variables.dart';
+import 'package:banking_app_ui/core/routes/route_constants.dart';
 // import 'package:banking_app_ui/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:banking_app_ui/features/home/presentations/widgets/credit_card.dart';
 import 'package:banking_app_ui/features/home/presentations/widgets/profile_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/money_container.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,7 +47,11 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 10,
               ),
-              const CCImage(),
+              GestureDetector(
+                  onTap: () {
+                    context.go(PagePath.cardPage);
+                  },
+                  child: const CCImage()),
               const SizedBox(
                 height: 10,
               ),

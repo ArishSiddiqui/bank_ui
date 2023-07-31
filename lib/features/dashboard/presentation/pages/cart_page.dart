@@ -13,7 +13,7 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text('Cart'),
+        title: const Text('Transcations'),
         centerTitle: true,
         actions: const [Icon(Icons.shopping_cart_checkout_outlined)],
       ),
