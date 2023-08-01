@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/bottom_navigation/presentations/pages/bottom_navigation.dart';
 import '../../features/dashboard/presentation/pages/dashboard_page.dart';
+import '../../features/statistics/presentation/statistics_page.dart';
 import '../../features/welcome/presentation/pages/welcome_page.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -25,6 +26,15 @@ final GoRouter router = GoRouter(
       // },
       pageBuilder: (context, state) => const MaterialPage(
         child: WelcomePage(),
+      ),
+    ),
+     GoRoute(
+      path: PagePath.statistics,
+      // builder: (BuildContext context, GoRouterState state) {
+      //   return WelcomePage();
+      // },
+      pageBuilder: (context, state) => const MaterialPage(
+        child: StatisticsPage(),
       ),
     ),
     StatefulShellRoute.indexedStack(
@@ -51,16 +61,22 @@ final GoRouter router = GoRouter(
                     Map<String, dynamic>? data =
                         state.extra as Map<String, dynamic>;
                     String userName = data['userName'];
-                    String name = data['name'];
-                   String designation = data['designation'];
-                   // ProfileDetails details = data['profileDetails'];
+                    //String name = data['name'];
+                    //String designation = data['designation'];
+                    ProfileDetails details = data['profileDetails'];
                     return MaterialPage(
                       child: ProfilePage(
-                        label: userName,
-                        newname: name,
-                        newdesignation: designation,
-                        //details: details,
-                      ),
+                          label: userName,
+                          // newname: name,
+                          // newdesignation: designation,
+                          
+                          details: details
+                          // details,
+                          // profileDetails:
+                          // ProfileDetails(
+                          //     designation: details.designation,
+                          //     name: details.name.toString()),
+                          ),
                     );
                   },
                 ),

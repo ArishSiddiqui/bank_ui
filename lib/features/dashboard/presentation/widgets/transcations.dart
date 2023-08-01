@@ -1,5 +1,5 @@
 import 'package:banking_app_ui/core/routes/route_constants.dart';
-import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
+//import 'package:banking_app_ui/features/dashboard/presentation/pages/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Container(
               // Add custom container properties for each transaction ListTile (if needed)
-              margin: EdgeInsets.symmetric(vertical: 8.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
                 color: Colors.grey[100],
@@ -49,7 +49,7 @@ class TransactionList extends StatelessWidget {
                   transactions[index].subtitle,
                   style: TextStyle(color: Colors.grey.shade500),
                 ),
-                trailing: Container(
+                trailing: SizedBox(
                   width: 100, // Set the desired width for the container
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -3,6 +3,9 @@ import 'package:banking_app_ui/features/dashboard/presentation/widgets/transcati
 import 'package:banking_app_ui/features/dashboard/presentation/widgets/widgets.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../core/routes/route_constants.dart';
 
 //import '../widgets/custom_button2.dart';
 
@@ -58,6 +61,7 @@ class _DashboardpageState extends State<Dashboardpage> {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
     //
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -102,23 +106,29 @@ class _DashboardpageState extends State<Dashboardpage> {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15)),
-                    child: const Row(
+                    child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.arrow_back_ios_new_rounded,
                           size: 15,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
-                        Text(
-                          'April 2023',
-                        ),
-                        SizedBox(
+                        TextButton(
+                            onPressed: () => context.push(PagePath.statistics),
+                            child: const Text(
+                              'April 2023',
+                            )),
+                        // TextButton(
+                        //   onTap
+                        //   'April 2023',
+                        // ),
+                        const SizedBox(
                           width: 15,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.arrow_forward_ios_rounded,
                           size: 15,
                         ),

@@ -5,15 +5,15 @@ import 'package:go_router/go_router.dart';
 
 class ProfilePage extends StatefulWidget {
   final String label;
-   final String newname;
-    final String newdesignation;
-  //final ProfileDetails details;
+  //final String newname;
+  //final String newdesignation;
+  final ProfileDetails details;
   const ProfilePage({
     super.key,
-     required this.label,
-     required this.newname,
-     required this.newdesignation,
-   // required this.details,
+    required this.label,
+    //required this.newname,
+    //required this.newdesignation,
+    required this.details, // required String profileDetails,
   });
 
   @override
@@ -59,7 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(
               height: 20,
             ),
-             Column(
+            Column(
               children: [
                 const CircleAvatar(
                   backgroundImage: NetworkImage(
@@ -71,27 +71,27 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 25,
                 ),
                 Text(
-                  widget.newname,
-                   //'JenniferMusk',
-                  style:  const TextStyle(
+                  widget.details.name,
+                  //'JenniferMusk',
+                  style: const TextStyle(
                       fontSize: 22, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-              Text(
-                 //  'Singer & Dancer',
-                 widget.newdesignation,
-                  style:  const TextStyle(fontSize: 20, color: Colors.grey),
+                Text(
+                  //  'Singer & Dancer',
+                  widget.details.designation,
+                  style: const TextStyle(fontSize: 20, color: Colors.grey),
                 ),
               ],
             ),
             const SizedBox(
               height: 20,
             ),
-           const  SizedBox(
+            const SizedBox(
               width: 350,
-              child:  Row(
+              child: Row(
                 children: [
                   Column(
                     children: [
@@ -157,5 +157,3 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
-
-

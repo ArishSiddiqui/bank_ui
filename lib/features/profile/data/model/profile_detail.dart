@@ -5,4 +5,10 @@ class ProfileDetails {
     required this.name,
     required this.designation,
   });
+  static toMap({String? name,String? designation}) {
+    return {
+      'name': name,
+      'designation': designation,
+    };
+  }
 }
