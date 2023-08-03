@@ -4,6 +4,7 @@ import 'package:banking_app_ui/features/profile/data/model/profile_detail.dart';
 import 'package:banking_app_ui/features/profile/presentation/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../counter/counter_app.dart';
 import '../../features/bottom_navigation/presentations/pages/bottom_navigation.dart';
 import '../../features/dashboard/presentation/pages/dashboard_page.dart';
 import '../../features/welcome/presentation/pages/welcome_page.dart';
@@ -15,7 +16,7 @@ final _dashKey = GlobalKey<NavigatorState>(debugLabel: 'shellB');
 
 final GoRouter router = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  // initialLocation: PagePath.home,
+  initialLocation: PagePath.counter,
   routes: <RouteBase>[
     GoRoute(
       path: PagePath.welcome,
@@ -25,6 +26,12 @@ final GoRouter router = GoRouter(
       pageBuilder: (context, state) => const MaterialPage(
         child: WelcomePage(),
       ),
+    ),
+    GoRoute(
+      path: PagePath.counter,
+      builder: (BuildContext context, GoRouterState state) {
+        return const MyHomePage();
+      },
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
